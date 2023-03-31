@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>QQ登录</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        body {
+            width: 350px;
+            background-color: #F5F5F5;
+        }
+
+        .userPage {
+            text-decoration: none;
+            color: #5981BC;
+        }
+
+        #webTitle {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        #inputUserNameContainer {
+            width: 100%;
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #inputUserPassContainer {
+            width: 100%;
+            /*margin-top: 0px;*/
+            display: flex;
+            justify-content: center;
+        }
+
+        .input {
+            width: 75%;
+            height: 55px;
+            text-align: center;
+            border-style: none;
+            box-shadow: 1px 2px 4px rgba(205, 206, 205, 0.1);
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        .input::placeholder {
+            color: #CDCDCD;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .userTour {
+            font-size: 11px;
+        }
+
+        .clickButton {
+            display: flex;
+            justify-content: center;
+        }
+
+        #signContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        #sign {
+            width: 75%;
+            height: 40px;
+            background-color: #7AC8F9;
+            border-style: none;
+            color: #ABE6FF;
+        }
+
+        .bottomMessage {
+            width: 100%;
+            margin-top: 260px;
+            display: flex;
+        }
+
+        .bottomMessageItem {
+            font-size: 11px;
+            flex: 1;
+            text-align: center;
+        }
+
+        #userName {
+            outline: none;
+        }
+
+        #userPass {
+            outline: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="webTitle">
+        QQ
+    </div>
+    <div id="inputUserNameContainer">
+        <input id="userName" placeholder="QQ号/QID/邮箱" class="input">
+    </div>
+    <br>
+    <div id="inputUserPassContainer">
+        <input id="userPass" placeholder="请输入QQ密码" class="input" type="password">
+    </div>
+    <br>
+
+    <span class="clickButton">
+        <input type="checkbox" id="checkbox" v-model="checkbox">
+        <span class="userTour">已阅读并同意
+            <span>
+                <a href="https://rule.tencent.com/rule/preview/46a15f24-e42c-4cb6-a308-2347139b1201" class="userPage">用户协议
+                </a>
+            </span>和
+            <span>
+                <a href="https://rule.tencent.com/rule/preview/3fd52bde-6555-453b-9ab8-c5f1f3d22c62" class="userPage">QQ隐私保护指引</a>
+            </span>
+        </span>
+    </span>
+    <br>
+    <span id="signContainer">
+        <input type="button" value="登录" id="sign" disabled="false">
+    </span>
+    <!--bottomMessage-->
+    <div class="bottomMessage">
+        <span class="bottomMessageItem">手机号登录</span>
+        <span class="bottomMessageItem">新用户注册</span>
+        <span class="bottomMessageItem">更多选项</span>
+    </div>
+</body>
+
+</html>

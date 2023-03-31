@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Edge</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <style>
+        body {
+            width: 360px;
+            height: 721px;
+            background-image: url(image/EdgeBackgroundImage.jpg);
+            background-repeat: no-repeat;
+            /*background-size调整背景图片大小*/
+            background-size: 360px 721px;
+        }
+
+        #home_top_items_div_container {
+            width: 100%;
+            margin-left: -8px;
+            margin-top: 22px;
+            display: flex;
+            justify-content: center;
+            /*background-color: blue;*/
+        }
+
+        #home_top_items_div {
+            display: flex;
+            justify-content: space-between;
+            width: 96%;
+            /*background-color: red;*/
+        }
+
+        #home_input_container {
+            margin-top: 350px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        #home_input_items {
+            display: flex;
+            width: 85%;
+        }
+
+        #home_input_search_container {
+            flex: 2;
+        }
+
+        #home_input_search {
+            height: 43px;
+            width: 100%;
+            /*默认情况下输入框和div总是矮一个像素，所以给输入框加边框*/
+            border: solid 1px #fff;
+            border-top-left-radius: 28px;
+            border-bottom-left-radius: 28px;
+        }
+
+        #home_input_search_placeholder {
+            position: absolute;
+            top: 414px;
+            left: 70px;
+            color: gray;
+            font-size: 16px;
+        }
+
+        #home_input_icon_container {
+            /*
+            width: 30px;
+            height: 42px;
+            */
+            flex: 1;
+            border-top-right-radius: 28px;
+            border-bottom-right-radius: 28px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #home_input_microphone_svg_icon,
+        #home_input_search_svg_icon {
+            margin-top: 11px;
+        }
+
+        #home_input_microphone_svg_icon {
+            margin-left: -20px;
+        }
+
+        #home_input_search_svg_icon {
+            margin-left: -27px;
+        }
+
+        #home_bottom_container {
+            /*底部的导航栏宽高在这改*/
+            width: 100%;
+            height: 40px;
+            margin-top: 225px;
+            margin-left: -8px;
+            /*background-color: aqua;*/
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #home_bottom_left_button,
+        #home_bottom_right_button,
+        #home_bottom_center_more,
+        #home_bottom_tag,
+        #home_bottom_share {
+            width: 45px;
+            height: 40px;
+            /*background-color: bisque;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home_bottom_center_more_radius {
+            width: 100%;
+            height: 25px;
+            border-radius: 15px;
+            border: solid #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home_bottom_center_more_items {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bolder;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -13px;
+        }
+
+        #home_bottom_tag_radius {
+            width: 20px;
+            height: 20px;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 5px;
+            border: solid #fff;
+            display: flex;
+            justify-content: center;
+        }
+
+        #home_bottom_share {
+            color: #fff;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            var getInput = $("#home_input_search")
+            //outline去除输入框获取焦点时默认的样式框
+            document.getElementById("home_input_search").style.outline = "none"
+            //点击输入框事件
+            $("#home_input_search_placeholder").click(function() {
+                $(this).css("display", "none")
+                $("#home_input_search").focus()
+            })
+            $("#home_input_search").focus(function() {
+                $("#home_input_search_placeholder").css("display", "none")
+            })
+            $("#home_input_search").blur(function() {
+                $("#home_input_search_placeholder").css("display", "block")
+            })
+            //底部导航栏的箭头我用canvas画了
+            var home_bottom_left_button_canvas = document.getElementById("home_bottom_left_button_canvas").getContext("2d")
+            //左箭头的两个斜角
+            home_bottom_left_button_canvas.moveTo(20, 12)
+            home_bottom_left_button_canvas.lineTo(10, 20)
+            home_bottom_left_button_canvas.lineTo(20, 28)
+            home_bottom_left_button_canvas.strokeStyle = " #999999"
+            home_bottom_left_button_canvas.stroke()
+            //左箭头的横线
+            home_bottom_left_button_canvas.moveTo(10, 20)
+            home_bottom_left_button_canvas.lineTo(27, 20)
+            home_bottom_left_button_canvas.stroke()
+            var home_bottom_right_button_canvas = document.getElementById("home_bottom_right_button_canvas").getContext("2d")
+            home_bottom_right_button_canvas.moveTo(25, 12)
+            home_bottom_right_button_canvas.lineTo(35, 20)
+            home_bottom_right_button_canvas.lineTo(25, 28)
+            home_bottom_right_button_canvas.strokeStyle = "#999999"
+            home_bottom_right_button_canvas.stroke()
+            home_bottom_right_button_canvas.moveTo(35, 20)
+            home_bottom_right_button_canvas.lineTo(18, 20)
+            home_bottom_right_button_canvas.stroke()
+        })
+    </script>
+</head>
+
+
+<body>
+    <div id="home_top_items_div_container">
+        <div id="home_top_items_div">
+            <img src="image/user_icon.png" id="home_user_icon" width="30px" height="30px">
+            <img src="image/more_information_icon.svg" id="home_more_information-icon" width="30px" height="30px">
+
+        </div>
+    </div>
+    <div id="home_input_container">
+        <div id="home_input_items">
+            <div id="home_input_search_container">
+                <input id="home_input_search">
+                <div id="home_input_search_placeholder">搜索或键入Web地址</div>
+            </div>
+            <div id="home_input_icon_container">
+                <!--麦克风SVG-->
+                <div id="home_input_microphone_svg_icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.25 11c.38 0 .7.28.74.65l.01.1v.5a6.75 6.75 0 01-6.25 6.73v2.27a.75.75 0 01-1.5.1v-2.37A6.75 6.75 0 015 12.48v-.73a.75.75 0 011.5-.1v.6a5.25 5.25 0 005.03 5.25h.72a5.25 5.25 0 005.25-5.03v-.72c0-.41.34-.75.75-.75zM12 2a4 4 0 014 4v6a4 4 0 01-8 0V6a4 4 0 014-4zm0 1.5A2.5 2.5 0 009.5 6v6a2.5 2.5 0 005 0V6A2.5 2.5 0 0012 3.5z">
+                        </path>
+                    </svg>
+                </div>
+                <!--搜索SVG-->
+                <div id="home_input_search_svg_icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2.75a7.25 7.25 0 015.63 11.82l4.9 4.9a.75.75 0 01-.98 1.13l-.08-.07-4.9-4.9A7.25 7.25 0 1110 2.75zm0 1.5a5.75 5.75 0 100 11.5 5.75 5.75 0 000-11.5z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="home_bottom_container">
+        <div id="home_bottom_left_button">
+            <canvas id="home_bottom_left_button_canvas" width="45px" height="40px"></canvas>
+        </div>
+        <div id="home_bottom_right_button">
+            <canvas id="home_bottom_right_button_canvas" width="45px" height="40px"></canvas>
+        </div>
+        <div id="home_bottom_center_more">
+            <div id="home_bottom_center_more_radius">
+                <div id="home_bottom_center_more_items">...</div>
+            </div>
+        </div>
+        <div id="home_bottom_tag">
+            <div id="home_bottom_tag_radius">
+                1
+            </div>
+        </div>
+        <div id="home_bottom_share">share</div>
+    </div>
+</body>
+
+</html>
