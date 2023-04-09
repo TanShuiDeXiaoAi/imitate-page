@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--https://www.mi.com/index.html-->
+    <meta charset="UTF-8">
+    <!--
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    -->
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .banner {
+            width: 100%;
+            height: 65px;
+            background-color: rgba(0, 0, 0, 0);
+            z-index: 1;
+            /*让他在页面上的位置固定死*/
+            position: fixed;
+            display: flex;
+            transition: all 0.5s ease 0.4s;
+        }
+
+        .body-container {
+            z-index: 0;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .logo-container {
+            height: 65px;
+            width: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .mi-logo {
+            line-height: 1.1;
+            /*-webkit-text-size-adjust: 100%;*/
+            font-size: 10px;
+            font-weight: 400;
+            height: 55%;
+        }
+
+        .banner-center-items-container {
+            display: flex;
+            /*justify-content: space-around;*/
+            align-items: center;
+            /*background-color: aqua;*/
+            width: 70%;
+        }
+
+        .banner-center-items-container div {
+            font-weight: 900;
+            color: rgb(255, 255, 255);
+            font-size: 13px;
+            height: 65px;
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner-center-items-container div:hover {
+            cursor: pointer;
+            color: #ff6900;
+        }
+
+        .banner-right-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /*background-color: red;*/
+            width: 8%;
+        }
+
+        .banner-right-container div {
+            color: rgb(255, 255, 255);
+            height: 65px;
+            display: flex;
+            align-items: center;
+        }
+
+        .banner-right-container div:hover {
+            cursor: pointer;
+            color: #ff6900;
+        }
+
+        /*登录和注册中间的竖线*/
+        .banner-right-center-item {
+            color: rgb(255, 255, 255);
+        }
+
+        /*Banner整体的结构布局，使用了flex*/
+        .banner-left-empty,
+        .banner-right-empty {
+            flex: 1.9;
+        }
+
+        .banner-center-empty-left,
+        .banner-center-empty-right {
+            flex: 6;
+        }
+
+        /*******************************/
+        .body-img {
+            height: 641px;
+        }
+
+        .body-container div.body-empty-div {
+            height: 11.86px;
+        }
+
+        .body-img-bottom-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .body-img-bottom-container div img {
+            width: 759.6px;
+            height: 418.68px;
+        }
+
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .footer-empty-left {
+            flex: 1.2;
+        }
+
+        .footer-empty-right {
+            flex: 0.6;
+        }
+
+        .footer-more {
+            display: flex;
+            width: 100%;
+            flex: 2.5;
+        }
+
+
+
+        .footer-more-buy,
+        .footer-more-serve,
+        .footer-more-shop,
+        .footer-more-about-xiaomi,
+        .footer-more-about-us {
+            width: 100%;
+        }
+
+        .footer-more-serve,
+        .footer-more-shop,
+        .footer-more-about-xiaomi,
+        .footer-more-about-us {
+            margin-left: 0%;
+        }
+
+        /*选购指南*/
+        .footer-more-buy {
+            /*background-color: rgb(39, 79, 114);*/
+            color: #424242;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .footer-more-buy div {
+            font-size: 14px;
+            font-weight: 520;
+        }
+
+        .footer-more-buy ol {
+            list-style: none;
+            margin-top: 10%;
+        }
+
+        .footer-more-buy ol li {
+            margin-left: -38%;
+            font-size: 13px;
+            color: #757575;
+            font-weight: 520;
+            margin-top: 7%;
+        }
+
+        /*服务中心*/
+        .footer-more-serve {
+            /*background-color: rgb(39, 114, 48);*/
+            color: #424242;
+        }
+
+        .footer-more-serve div {
+            font-size: 14px;
+            font-weight: 520;
+        }
+
+        .footer-more-serve ol {
+            list-style: none;
+            margin-top: 10%;
+        }
+
+        .footer-more-serve ol li {
+            margin-left: -38%;
+            font-size: 13px;
+            color: #757575;
+            font-weight: 520;
+            margin-top: 7%;
+        }
+
+        /*线下门店*/
+        .footer-more-shop {
+            /*background-color: rgb(181, 105, 37);*/
+            color: #424242;
+        }
+
+        .footer-more-shop div {
+            font-size: 14px;
+            font-weight: 520;
+        }
+
+        .footer-more-shop ol {
+            list-style: none;
+            margin-top: 10%;
+        }
+
+        .footer-more-shop ol li {
+            margin-left: -38%;
+            font-size: 13px;
+            color: #757575;
+            font-weight: 520;
+            margin-top: 7%;
+        }
+
+        /*关于小米*/
+        .footer-more-about-xiaomi {
+            /*background-color: rgb(37, 162, 181);*/
+            color: #424242;
+        }
+
+        .footer-more-about-xiaomi div {
+            font-size: 14px;
+            font-weight: 520;
+        }
+
+        .footer-more-about-xiaomi ol {
+            list-style: none;
+            margin-top: 10%;
+        }
+
+        .footer-more-about-xiaomi ol li {
+            margin-left: -38%;
+            font-size: 13px;
+            color: #757575;
+            font-weight: 520;
+            margin-top: 7%;
+        }
+
+        /*关于我们*/
+        .footer-more-about-us {
+            /*background-color: rgb(171, 37, 181);*/
+            color: #424242;
+        }
+
+        .footer-more-about-us div {
+            font-size: 14px;
+            font-weight: 520;
+        }
+
+        .footer-more-about-us ol {
+            list-style: none;
+            margin-top: 10%;
+        }
+
+        .footer-more-about-us ol li {
+            margin-left: -38%;
+            font-size: 13px;
+            color: #757575;
+            font-weight: 520;
+            margin-top: 7%;
+        }
+
+        /********************************/
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script>
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 50) {
+                $(".banner").css("background-color","rgba(0, 0, 0, .85)")
+            }
+            else {
+                $(".banner").css("background-color","rgba(0, 0, 0, 0)")
+            }
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner-left-empty"></div>
+        <!--小米的logo-->
+        <div class="logo-container">
+            <svg data-v-777bda80="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 808 808" class="mi-logo">
+                <g data-v-777bda80="">
+                    <path data-v-777bda80="" fill="#ff6900"
+                        d="M723.79,84.42C647.55,8.48,537.94,0,404,0,269.89,0,160.12,8.58,83.92,84.72S0,270.43,0,404.39,7.74,648,84,724.14,269.9,808,404,808s243.85-7.71,320-83.86,84-185.78,84-319.75C808,270.25,800.16,160.54,723.79,84.42Z">
+                    </path>
+                    <path data-v-777bda80="" fill="#fff"
+                        d="M374.26,553.72a5,5,0,0,1-5.06,5H300.3a5.05,5.05,0,0,1-5.12-5V373.53a5.05,5.05,0,0,1,5.12-5h68.9a5,5,0,0,1,5.06,5Z">
+                    </path>
+                    <path data-v-777bda80="" fill="#fff"
+                        d="M509.18,553.72a5.05,5.05,0,0,1-5.09,5H438.5a5,5,0,0,1-5.1-5V398.26c-.07-27.15-1.62-55-15.64-69.06-12-12.09-34.51-14.86-57.88-15.44H241a5,5,0,0,0-5.07,5v235a5.07,5.07,0,0,1-5.12,5H165.16a5,5,0,0,1-5.06-5V254.31a5,5,0,0,1,5.06-5H354.52c49.49,0,101.22,2.26,126.74,27.81s27.92,77.3,27.92,126.85Z">
+                    </path>
+                    <path data-v-777bda80="" fill="#fff"
+                        d="M644.29,553.72a5.06,5.06,0,0,1-5.09,5H573.57a5,5,0,0,1-5.08-5V254.31a5,5,0,0,1,5.08-5H639.2a5.06,5.06,0,0,1,5.09,5Z">
+                    </path>
+                </g>
+            </svg>
+        </div>
+        <!--banner中间的一大堆内容-->
+        <div class="banner-center-empty-left"></div>
+        <div class="banner-center-items-container">
+            <div style="color:#ff6900;">小米官网</div>
+            <div>小米商城</div>
+            <div>小米影像</div>
+            <div>MIUI</div>
+            <div>loT</div>
+            <div>云服务</div>
+            <div>天星数科</div>
+            <div>有品</div>
+            <div>小米开放平台</div>
+            <div>企业团购</div>
+            <div>Location</div>
+        </div>
+        <div class="banner-center-empty-right"></div>
+        <!--Banner右边的登录和注册选项-->
+        <div class="banner-right-container">
+            <div>登录</div>
+            <span class="banner-right-center-item">|</span>
+            <div>注册</div>
+        </div>
+        <div class="banner-right-empty"></div>
+    </div>
+    <!--主体部分的一大堆图片-->
+    <div class="body-container">
+        <img src="image/xiaomi-home-1.jpg" alt="" class="body-img">
+        <div class="body-empty-div"></div>
+        <img src="image/xiaomi-home-2.jpg" alt="" class="body-img">
+        <div class="body-empty-div"></div>
+        <img src="image/xiaomi-home-3.jpg" alt="" class="body-img">
+        <div class="body-empty-div"></div>
+        <img src="image/xiaomi-home-4.jpg" alt="" class="body-img">
+        <div class="body-empty-div"></div>
+        <img src="image/xiaomi-home-5.jpg" alt="" class="body-img">
+        <div class="body-empty-div"></div>
+        <img src="image/xiaomi-home-6.jpg" alt="" class="body-img">
+        <div class="body-empty-div"></div>
+        <div class="body-img-bottom-container">
+            <div>
+                <img src="image/xiaomi-home-7.jpg" alt="">
+            </div>
+            <div>
+                <img src="image/xiaomi-home-8.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <!--页面下方的footer-->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-empty-left"></div>
+            <div class="footer-more">
+                <!--选购指南-->
+                <div class="footer-more-buy">
+                    <div>选购指南</div>
+                    <ol>
+                        <li>手机</li>
+                        <li>电视</li>
+                        <li>笔记本</li>
+                        <li>平板</li>
+                        <li>穿戴</li>
+                        <li>耳机</li>
+                        <li>家电</li>
+                        <li>路由器</li>
+                        <li>音响</li>
+                        <li>配件</li>
+                    </ol>
+                </div>
+                <!--服务中心-->
+                <div class="footer-more-serve">
+                    <div>服务中心</div>
+                    <ol>
+                        <li>申请售后</li>
+                        <li>售后政策</li>
+                        <li>维修服务价格</li>
+                        <li>订单查询</li>
+                        <li>以旧换新</li>
+                        <li>保障服务</li>
+                        <li>防伪查询</li>
+                        <li>F码通道</li>
+                    </ol>
+                </div>
+                <!--线下门店-->
+                <div class="footer-more-shop">
+                    <div>线下门店</div>
+                    <ol>
+                        <li>小米之家</li>
+                        <li>服务网点</li>
+                        <li>授权体验店/专区</li>
+                    </ol>
+                </div>
+                <!--关于小米-->
+                <div class="footer-more-about-xiaomi">
+                    <div>关于小米</div>
+                    <ol>
+                        <li>了解小米</li>
+                        <li>加入小米</li>
+                        <li>投资者关系</li>
+                        <li>环境,社会及管治</li>
+                        <li>廉洁举报</li>
+                    </ol>
+                </div>
+                <!--关于我们-->
+                <div class="footer-more-about-us">
+                    <div>关于我们</div>
+                    <ol>
+                        <li>新浪微博</li>
+                        <li>官方微信</li>
+                        <li>联系我们</li>
+                        <li>公益基金会</li>
+                    </ol>
+                </div>
+            </div>
+            <!--footer-call部分-->
+            <iframe src="仿小米网页排版-footer-call.html" frameborder="0" width="auto"></iframe>
+            <div class="footer-empty-right"></div>
+        </div>
+    </div>
+    <!--最下方的一大堆声明-->
+    <iframe src="仿小米网页排版-site-info.html" frameborder="0" width="100%" height="256px"></iframe>
+</body>
+
+</html>
