@@ -147,162 +147,15 @@
         .footer-empty-right {
             flex: 0.6;
         }
-
-        .footer-more {
-            display: flex;
-            width: 100%;
-            flex: 2.5;
-        }
-
-
-
-        .footer-more-buy,
-        .footer-more-serve,
-        .footer-more-shop,
-        .footer-more-about-xiaomi,
-        .footer-more-about-us {
-            width: 100%;
-        }
-
-        .footer-more-serve,
-        .footer-more-shop,
-        .footer-more-about-xiaomi,
-        .footer-more-about-us {
-            margin-left: 0%;
-        }
-
-        /*选购指南*/
-        .footer-more-buy {
-            /*background-color: rgb(39, 79, 114);*/
-            color: #424242;
-            font-weight: 500;
-            font-size: 15px;
-        }
-
-        .footer-more-buy div {
-            font-size: 14px;
-            font-weight: 520;
-        }
-
-        .footer-more-buy ol {
-            list-style: none;
-            margin-top: 10%;
-        }
-
-        .footer-more-buy ol li {
-            margin-left: -38%;
-            font-size: 13px;
-            color: #757575;
-            font-weight: 520;
-            margin-top: 7%;
-        }
-
-        /*服务中心*/
-        .footer-more-serve {
-            /*background-color: rgb(39, 114, 48);*/
-            color: #424242;
-        }
-
-        .footer-more-serve div {
-            font-size: 14px;
-            font-weight: 520;
-        }
-
-        .footer-more-serve ol {
-            list-style: none;
-            margin-top: 10%;
-        }
-
-        .footer-more-serve ol li {
-            margin-left: -38%;
-            font-size: 13px;
-            color: #757575;
-            font-weight: 520;
-            margin-top: 7%;
-        }
-
-        /*线下门店*/
-        .footer-more-shop {
-            /*background-color: rgb(181, 105, 37);*/
-            color: #424242;
-        }
-
-        .footer-more-shop div {
-            font-size: 14px;
-            font-weight: 520;
-        }
-
-        .footer-more-shop ol {
-            list-style: none;
-            margin-top: 10%;
-        }
-
-        .footer-more-shop ol li {
-            margin-left: -38%;
-            font-size: 13px;
-            color: #757575;
-            font-weight: 520;
-            margin-top: 7%;
-        }
-
-        /*关于小米*/
-        .footer-more-about-xiaomi {
-            /*background-color: rgb(37, 162, 181);*/
-            color: #424242;
-        }
-
-        .footer-more-about-xiaomi div {
-            font-size: 14px;
-            font-weight: 520;
-        }
-
-        .footer-more-about-xiaomi ol {
-            list-style: none;
-            margin-top: 10%;
-        }
-
-        .footer-more-about-xiaomi ol li {
-            margin-left: -38%;
-            font-size: 13px;
-            color: #757575;
-            font-weight: 520;
-            margin-top: 7%;
-        }
-
-        /*关于我们*/
-        .footer-more-about-us {
-            /*background-color: rgb(171, 37, 181);*/
-            color: #424242;
-        }
-
-        .footer-more-about-us div {
-            font-size: 14px;
-            font-weight: 520;
-        }
-
-        .footer-more-about-us ol {
-            list-style: none;
-            margin-top: 10%;
-        }
-
-        .footer-more-about-us ol li {
-            margin-left: -38%;
-            font-size: 13px;
-            color: #757575;
-            font-weight: 520;
-            margin-top: 7%;
-        }
-
-        /********************************/
     </style>
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
     <script>
         $(window).scroll(function () {
             if ($(window).scrollTop() > 50) {
-                $(".banner").css("background-color","rgba(0, 0, 0, .85)")
+                $(".banner").css("background-color", "rgba(0, 0, 0, .85)")
             }
             else {
-                $(".banner").css("background-color","rgba(0, 0, 0, 0)")
+                $(".banner").css("background-color", "rgba(0, 0, 0, 0)")
             }
 
         });
@@ -382,68 +235,8 @@
     <div class="footer">
         <div class="footer-container">
             <div class="footer-empty-left"></div>
-            <div class="footer-more">
-                <!--选购指南-->
-                <div class="footer-more-buy">
-                    <div>选购指南</div>
-                    <ol>
-                        <li>手机</li>
-                        <li>电视</li>
-                        <li>笔记本</li>
-                        <li>平板</li>
-                        <li>穿戴</li>
-                        <li>耳机</li>
-                        <li>家电</li>
-                        <li>路由器</li>
-                        <li>音响</li>
-                        <li>配件</li>
-                    </ol>
-                </div>
-                <!--服务中心-->
-                <div class="footer-more-serve">
-                    <div>服务中心</div>
-                    <ol>
-                        <li>申请售后</li>
-                        <li>售后政策</li>
-                        <li>维修服务价格</li>
-                        <li>订单查询</li>
-                        <li>以旧换新</li>
-                        <li>保障服务</li>
-                        <li>防伪查询</li>
-                        <li>F码通道</li>
-                    </ol>
-                </div>
-                <!--线下门店-->
-                <div class="footer-more-shop">
-                    <div>线下门店</div>
-                    <ol>
-                        <li>小米之家</li>
-                        <li>服务网点</li>
-                        <li>授权体验店/专区</li>
-                    </ol>
-                </div>
-                <!--关于小米-->
-                <div class="footer-more-about-xiaomi">
-                    <div>关于小米</div>
-                    <ol>
-                        <li>了解小米</li>
-                        <li>加入小米</li>
-                        <li>投资者关系</li>
-                        <li>环境,社会及管治</li>
-                        <li>廉洁举报</li>
-                    </ol>
-                </div>
-                <!--关于我们-->
-                <div class="footer-more-about-us">
-                    <div>关于我们</div>
-                    <ol>
-                        <li>新浪微博</li>
-                        <li>官方微信</li>
-                        <li>联系我们</li>
-                        <li>公益基金会</li>
-                    </ol>
-                </div>
-            </div>
+            <!--footer-more部分-->
+            <iframe src="仿小米网页排版-footer-more.html" frameborder="0" width="55%" height="350.5px"></iframe>
             <!--footer-call部分-->
             <iframe src="仿小米网页排版-footer-call.html" frameborder="0" width="auto"></iframe>
             <div class="footer-empty-right"></div>
